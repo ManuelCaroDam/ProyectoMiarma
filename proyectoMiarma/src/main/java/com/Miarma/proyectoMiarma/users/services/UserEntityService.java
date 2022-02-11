@@ -27,8 +27,6 @@ public class UserEntityService extends BaseService<UserEntity, UUID, UserEntityR
                 .orElseThrow(()-> new UsernameNotFoundException(email + " no encontrado"));
     }
 
-
-    // Este método lo mejoraremos en el próximo tema
     public UserEntity save(CreateUserDto newUser) {
         if (newUser.getPassword().contentEquals(newUser.getPassword2())) {
             UserEntity userEntity = UserEntity.builder()
