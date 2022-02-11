@@ -3,8 +3,6 @@ package com.Miarma.proyectoMiarma.users.dto;
 import com.Miarma.proyectoMiarma.users.model.UserEntity;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Collectors;
-
 @Component
 public class UserDtoConverter {
 

@@ -2,8 +2,6 @@ package com.Miarma.proyectoMiarma.users.dto;
 
 import lombok.*;
 
-import java.util.Set;
-
 @Getter
 @Setter
 @NoArgsConstructor
