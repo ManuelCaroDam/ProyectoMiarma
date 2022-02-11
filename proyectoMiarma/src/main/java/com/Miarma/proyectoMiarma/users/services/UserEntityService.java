@@ -1,6 +1,7 @@
 package com.Miarma.proyectoMiarma.users.services;
 
 
+import com.Miarma.proyectoMiarma.services.BaseService;
 import com.Miarma.proyectoMiarma.users.dto.CreateUserDto;
 import com.Miarma.proyectoMiarma.users.model.UserEntity;
 import com.Miarma.proyectoMiarma.users.model.UserRole;
