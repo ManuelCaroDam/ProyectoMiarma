@@ -1,4 +1,7 @@
 package com.Miarma.proyectoMiarma.repos;
 
-public class RegisterRepository {
+import com.Miarma.proyectoMiarma.model.Register;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RegisterRepository extends JpaRepository<Register,Long> {
 }

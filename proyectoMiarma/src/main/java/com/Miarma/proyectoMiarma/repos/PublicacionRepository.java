@@ -1,4 +1,7 @@
 package com.Miarma.proyectoMiarma.repos;
 
-public class PublicacionRepository {
+import com.Miarma.proyectoMiarma.model.Publicacion;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PublicacionRepository extends JpaRepository<Publicacion,Long> {
 }
