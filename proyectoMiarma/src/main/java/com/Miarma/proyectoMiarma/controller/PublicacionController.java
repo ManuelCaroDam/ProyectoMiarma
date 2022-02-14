@@ -4,7 +4,6 @@ import com.Miarma.proyectoMiarma.model.Publicacion;
 import com.Miarma.proyectoMiarma.model.Usuario;
 import com.Miarma.proyectoMiarma.repos.PublicacionRepository;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
@@ -65,6 +64,12 @@ public class PublicacionController {
         }else {
             return null;
         }
+    }
+
+    public List<Publicacion> optenerPublicacionesUsuarioLogueado (Usuario usuarioLogueado) {
+
+        return usuarioLogueado.getListaPublicaciones();
+
     }
 
 

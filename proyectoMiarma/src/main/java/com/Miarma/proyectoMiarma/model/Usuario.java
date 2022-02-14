@@ -19,6 +19,7 @@ public class Usuario {
     private Long id;
     private String nombreUsuario;
     private boolean registrado;
+    private boolean publicoPerfil;
     private List <Publicacion> listaPublicaciones;
     private List <Usuario> listaSeguidos;
 }
