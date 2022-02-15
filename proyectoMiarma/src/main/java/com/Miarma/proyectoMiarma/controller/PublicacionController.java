@@ -59,7 +59,7 @@ public class PublicacionController {
 
     public List<Publicacion> optenerTodasPublicaciosUsuario(Usuario suUsuario, Usuario miUsuario) {
 
-        if (miUsuario.isRegistrado()) {
+        if (miUsuario.isLogueado()) {
             return suUsuario.getListaPublicaciones();
         }else {
             return null;
