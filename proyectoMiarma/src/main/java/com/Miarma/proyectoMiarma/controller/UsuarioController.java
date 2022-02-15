@@ -8,11 +8,11 @@ public class UsuarioController {
     public Usuario visualizarUsuario (@PathVariable Usuario suUsuario, Usuario miUsuario) {
 
        if (suUsuario.isPublicoPerfil()) {
-           return suUsuario;
+           if (miUsuario.getListaSeguidos().contains(suUsuario)) {
+               return suUsuario;
+           }
        }
-       if (miUsuario.getListaSeguidos().contains(suUsuario)) {
-           return suUsuario;
-       }
+
        return null;
     }
 
@@ -23,11 +23,13 @@ public class UsuarioController {
 
         }
 
-        if (u.isPublicoPerfil() == publicoPerfil) {
+        if (u.isPublicoPerfil() != publicoPerfil) {
             u.setPublicoPerfil(publicoPerfil);
         }
 
     }
+
+
 
 
 
