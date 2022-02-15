@@ -3,6 +3,8 @@ package com.Miarma.proyectoMiarma.controller;
 import com.Miarma.proyectoMiarma.model.Usuario;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Objects;
+
 public class UsuarioController {
 
     public Usuario visualizarUsuario (@PathVariable Usuario suUsuario, Usuario miUsuario) {
@@ -18,20 +20,14 @@ public class UsuarioController {
 
     public void editarUsuario (@PathVariable Usuario u,String nombreUsuario, boolean publicoPerfil) {
 
-        if (u.getNombreUsuario() != nombreUsuario) {
+        if (!Objects.equals(u.getNombreUsuario(), nombreUsuario)) {
             u.setNombreUsuario(nombreUsuario);
 
         }
 
-        if (u.isPublicoPerfil() != publicoPerfil) {
+        if (!u.isPublicoPerfil()) {
             u.setPublicoPerfil(publicoPerfil);
         }
 
     }
-
-
-
-
-
-
 }
