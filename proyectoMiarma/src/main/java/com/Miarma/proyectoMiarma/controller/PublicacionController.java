@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class PublicacionController {
@@ -25,7 +26,7 @@ public class PublicacionController {
 
     public void modificarPublicacion(@PathVariable String titulo, Path ruta, Publicacion p, boolean privacidad) {
 
-        if (titulo != p.getTitulo()) {
+        if (!Objects.equals(titulo, p.getTitulo())) {
 
             p.setTitulo(titulo);
 
