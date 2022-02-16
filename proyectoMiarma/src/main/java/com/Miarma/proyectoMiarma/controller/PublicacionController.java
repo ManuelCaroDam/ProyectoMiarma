@@ -24,8 +24,12 @@ public class PublicacionController {
 
     }
 
+    //Modifica una publicación
     public void modificarPublicacion(@PathVariable String titulo, Path ruta, Publicacion p, boolean privacidad) {
 
+
+        //Comprueba campo por campo la publicación editada respecto
+        //a la publicación original para ver si hay algún cambio
         if (!Objects.equals(titulo, p.getTitulo())) {
 
             p.setTitulo(titulo);
@@ -40,27 +44,60 @@ public class PublicacionController {
         if (privacidad != p.isPublica()) {
             p.setPublica(privacidad);
         }
-
+    // En caso de que hay habido algún cambio, lo realiza y lo guarda
         repository.save(p);
 
     }
 
-    public void borrarPublicacion(@PathVariable Publicacion p) {
+    //Borra una publicación
+    public void borrarPublicación(@PathVariable Publicacion p, Usuario usuarioLogueado) {
 
+        List <Publicacion> listaTodasPublicaciones = repository.findAll();
+        for (Publicacion listaPublicacion: listaTodasPublicaciones) {
+
+            //Borra la publicación de la lista de publicaciones del usuario
+            usuarioLogueado.getListaPublicaciones().remove(p);
+        }
+
+        //Borra la publicación del repositorio de publicaciones
         repository.delete(p);
         repository.save(p);
 
     }
 
-    public List<Publicacion> optenerTodasPublicaciones() {
-       return repository.findAll();
+
+
+
+    //Devuelve todas las publicaciones
+    public List<Publicacion> optenerTodasPublicaciones(Usuario usuarioLogueado) {
+
+        List<Publicacion> listaPublicacionesPublicas = new ArrayList<>();
+
+        for (Publicacion listaPublicacionesPublica : listaPublicacionesPublicas) {
+          if (equals(repository.findById(listaPublicacionesPublica.getId()))) {
+
+          }
+        }
+
+
+
+
     }
 
-    public Optional<Publicacion> optenerPublicacion (Long id) {
+
+
+
+
+
+    public Optional<Publicacion> optenerUnaPublicacionPorId (Long id) {
         return repository.findById(id);
     }
 
-    public List<Publicacion> optenerTodasPublicaciosUsuario(Usuario usuarioSeguido, Usuario usuarioLogueado) {
+
+
+
+
+    public List<Publicacion> optenerTodasPublicacionesUsuario(Usuario usuarioSeguido, Usuario usuarioLogueado) {
 
         List<Publicacion> listaPublicacionesPublicas = new ArrayList<>();
 
@@ -90,7 +127,11 @@ public class PublicacionController {
 
      }
 
+
+
+
     public List<Publicacion> optenerPublicacionesUsuarioLogueado (Usuario usuarioLogueado) {
+
         //En caso de que el usuario este logueado devuelve sus publicaciones
         if (usuarioLogueado.isLogueado()) {
 
