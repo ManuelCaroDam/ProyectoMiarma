@@ -29,4 +29,15 @@ public class Usuario {
     private List <Usuario> yoSigo;
     private List <Usuario> meSiguen;
     private List <Usuario> pendientesAceptar;
+
+    public Usuario(String nick, String email, Date fechaNacimiento, Path avatar, boolean b, boolean privado) {
+        this.nick = nick;
+        this.email = email;
+        this.fechaNacimiento = fechaNacimiento;
+        this.avatar = avatar;
+        this.logueado = b;
+        this.publicoPerfil = privado;
+    }
+
+
 }
