@@ -20,4 +20,7 @@ public class Publicacion {
     private String texto;
     private Path fichero;
     private boolean publica;
+
+    public Publicacion(String titulo, String texto, Path ruta, boolean publico) {
+    }
 }
