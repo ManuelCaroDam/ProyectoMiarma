@@ -74,7 +74,7 @@ public class PublicacionController {
         List<Publicacion> listaPublicacionesPublicas = new ArrayList<>();
 
         for (Publicacion listaPublicacionesPublica : listaPublicacionesPublicas) {
-          if (equals(repository.findById(listaPublicacionesPublica.getId()))) {
+          if (equals(repository.findById(listaPublicacionesPublica.getId()).get().isPublica())) {
 
           }
         }
