@@ -42,8 +42,8 @@ public class loginRegisterController {
         boolean loguear = true;
         Token token = null;
 
-        //Cambia el atributo booleano de false a true
-        //estar en true siginifica estar logueado
+        //Cambia el atributo booleano asignado como false a true
+        //estar en true significa estar logueado
         usuarioALoguear.setLogueado(loguear);
 
         repository.save(usuarioALoguear);
@@ -52,7 +52,7 @@ public class loginRegisterController {
 
     }
 
-    //Optiene todos los usuarios que estan logueados
+    //Optiene todos los usuarios que están logueados
    public List <Usuario> optenerListaUsuariosLogueados () {
 
         List <Usuario> listaTotalUsuarios = repository.findAll();
