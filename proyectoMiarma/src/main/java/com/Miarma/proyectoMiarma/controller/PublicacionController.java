@@ -102,7 +102,7 @@ public class PublicacionController {
              return usuarioSeguido.getListaPublicaciones();
          } else {
 
-             //En caso que no lo lo sigas, este for comprueba si cada publicacion es publica
+             //En caso de que no lo sigas, este for comprueba si cada publicación es pública
              //las publicas las guarda en una lista y las devuelve
              for (int i = 0;i<usuarioSeguido.getListaPublicaciones().size();i++) {
 

@@ -10,12 +10,12 @@ public class UsuarioController {
 
     private UsuarioRepository repository;
 
-    //Este método visualiza un usuario si tienes acceso a el
+    //Este método visualiza un usuario si tienes acceso a él
     public Usuario visualizarUsuario (@PathVariable Usuario usuarioAVisualizar, Usuario usuarioLogueado) {
 
-        //Comprueba si tu usuario esta logueado en el sistema
+        //Comprueba si tu usuario ya tiene iniciada sección en el sistema
        if (usuarioLogueado.isLogueado()) {
-           //Comprueba si el pefil que quieres ver es publico
+           //Comprueba si el perfil que quieres ver es público
             if (usuarioAVisualizar.isPublicoPerfil())
                 return usuarioAVisualizar;
             else {
@@ -26,7 +26,7 @@ public class UsuarioController {
        }
 
 
-       //Si no es publico y no le sigues no puedes verlo
+       //Si no es público y no le sigues no puedes verlo
        return null;
     }
     //Permite editar un usuario
@@ -39,7 +39,7 @@ public class UsuarioController {
                 //al usuario original para ver si hay algún cambio
 
                 if (!Objects.equals(usuarioLogueado.getNick(), nombreUsuario)) {
-                    //En caso de que encuentre algún cambio lo setea
+                    //En caso de que encuentre algún cambio lo modifica
                     usuarioLogueado.setNick(nombreUsuario);
 
                 }
@@ -53,7 +53,7 @@ public class UsuarioController {
 
     }
 
-    //Este metodo permite mandar solicitud de seguimiento a un usuario
+    //Este método permite mandar solicitud de seguimiento a un usuario
     public void seguirUsuario (@PathVariable Usuario usuarioASeguir, Usuario usuarioLogueado) {
 
         if(usuarioLogueado.isLogueado()) {
@@ -66,7 +66,7 @@ public class UsuarioController {
 
     }
 
-    //Este metodo permite aceptar un usuario
+    //Este método permite aceptar un usuario
     public void aceptarUsuario (@PathVariable Usuario usuarioLogueado, Usuario usuarioAceptar) {
 
         if (usuarioLogueado.isLogueado()) {
