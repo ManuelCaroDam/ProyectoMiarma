@@ -79,7 +79,7 @@ public class PublicacionController {
 
 
 
-    //Obtiene una publicación especifica
+    //Obtiene una publicación específica
     public Optional<Publicacion> obtenerUnaPublicacionPorId (Long id) {
 
         return repository.findById(id);
