@@ -71,16 +71,7 @@ public class PublicacionController {
     //Devuelve todas las publicaciones
     public List<Publicacion> optenerTodasPublicaciones(Usuario usuarioLogueado) {
 
-        List<Publicacion> listaPublicacionesPublicas = new ArrayList<>();
-
-        for (Publicacion listaPublicacionesPublica : listaPublicacionesPublicas) {
-          if (equals(repository.findById(listaPublicacionesPublica.getId()).get().isPublica())) {
-
-          }
-        }
-
-
-
+      return repository.findAll();
 
     }
 
