@@ -69,7 +69,7 @@ public class PublicacionController {
 
 
     //Devuelve todas las publicaciones
-    public List<Publicacion> optenerTodasPublicaciones(Usuario usuarioLogueado) {
+    public List<Publicacion> obtenerTodasPublicaciones(Usuario usuarioLogueado) {
 
       return repository.findAll();
 
@@ -79,8 +79,9 @@ public class PublicacionController {
 
 
 
+    //Obtiene una publicación especifica
+    public Optional<Publicacion> obtenerUnaPublicacionPorId (Long id) {
 
-    public Optional<Publicacion> optenerUnaPublicacionPorId (Long id) {
         return repository.findById(id);
     }
 
@@ -88,7 +89,7 @@ public class PublicacionController {
 
 
 
-    public List<Publicacion> optenerTodasPublicacionesUsuario(Usuario usuarioSeguido, Usuario usuarioLogueado) {
+    public List<Publicacion> obtenerTodasPublicacionesUsuario(Usuario usuarioSeguido, Usuario usuarioLogueado) {
 
         List<Publicacion> listaPublicacionesPublicas = new ArrayList<>();
 
