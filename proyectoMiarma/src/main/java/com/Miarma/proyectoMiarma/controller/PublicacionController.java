@@ -49,7 +49,7 @@ public class PublicacionController {
     }
 
     //Borra una publicación
-    public void borrarPublicación(@PathVariable Publicacion p, Usuario usuarioLogueado) {
+    public void borrarPublicacion(@PathVariable Publicacion p, Usuario usuarioLogueado) {
 
         List <Publicacion> listaTodasPublicaciones = repository.findAll();
         for (Publicacion listaPublicacion: listaTodasPublicaciones) {
