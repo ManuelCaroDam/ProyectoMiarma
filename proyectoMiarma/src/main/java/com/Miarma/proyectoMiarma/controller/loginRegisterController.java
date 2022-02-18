@@ -52,7 +52,7 @@ public class loginRegisterController {
 
     }
 
-    //Optiene todos los usuarios que están logueados
+    //Obtiene todos los usuarios que están logueados
    public List <Usuario> optenerListaUsuariosLogueados () {
 
         List <Usuario> listaTotalUsuarios = repository.findAll();
