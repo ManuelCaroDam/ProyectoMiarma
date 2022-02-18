@@ -27,7 +27,6 @@ public class PublicacionController {
     //Modifica una publicación
     public void modificarPublicacion(@PathVariable String titulo, Path ruta, Publicacion p, boolean privacidad) {
 
-
         //Comprueba campo por campo la publicación editada respecto
         //a la publicación original para ver si hay algún cambio
         if (!Objects.equals(titulo, p.getTitulo())) {
@@ -65,9 +64,6 @@ public class PublicacionController {
 
     }
 
-
-
-
     //Devuelve todas las publicaciones
     public List<Publicacion> obtenerTodasPublicaciones(Usuario usuarioLogueado) {
 
@@ -75,19 +71,11 @@ public class PublicacionController {
 
     }
 
-
-
-
-
     //Obtiene una publicación específica
     public Optional<Publicacion> obtenerUnaPublicacionPorId (Long id) {
 
         return repository.findById(id);
     }
-
-
-
-
 
     public List<Publicacion> obtenerTodasPublicacionesUsuario(Usuario usuarioSeguido, Usuario usuarioLogueado) {
 
@@ -119,9 +107,6 @@ public class PublicacionController {
 
      }
 
-
-
-
     public List<Publicacion> optenerPublicacionesUsuarioLogueado (Usuario usuarioLogueado) {
 
         //En caso de que el usuario este logueado devuelve sus publicaciones
@@ -132,10 +117,4 @@ public class PublicacionController {
         //En caso que no devuelve null
         return null;
     }
-
-
-
-
-
-
 }
